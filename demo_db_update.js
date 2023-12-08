@@ -10,9 +10,9 @@ const con = mysql.createConnection({
 con.connect((err) => {
     if(err) throw err
     console.log('MySQL Server connected')
-    let sql = "DROP TABLE IF EXISTS customers"
+    let sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'"
     con.query(sql, (err, result) => {
         if(err) throw err
-        console.log(result)
+        console.log(result.affectedRows + " record(s) updated");
     })
 })

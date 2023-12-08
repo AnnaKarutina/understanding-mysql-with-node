@@ -11,7 +11,7 @@ con.connect((err) => {
     if(err) throw err
     console.log('MySQL Server connected')
     // let sql = "INSERT INTO customers (name, address) VALUES ('Company Inc', 'Highway 37')"
-    /*
+    
     let sql = `INSERT INTO customers (name, address) VALUES
         ('John', 'Highway 71'),
         ('Peter', 'Lowstreet 4'),
@@ -27,8 +27,8 @@ con.connect((err) => {
         ('William', 'Central st 954'),
         ('Chuck', 'Main Road 989'),
         ('Viola', 'Sideway 1633')`;
-    */
-   let sql = "INSERT INTO customers (name, address) VALUES ('Michelle', 'Blue Village 1')"
+    
+    //let sql = "INSERT INTO customers (name, address) VALUES ('Michelle', 'Blue Village 1')"
     con.query(sql, (err, result) => {
         console.log(result)
         if(err) throw err
