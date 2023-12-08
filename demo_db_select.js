@@ -10,7 +10,8 @@ const con = mysql.createConnection({
 con.connect((err) => {
     if(err) throw err
     console.log('MySQL Server connected')
-    let sql = "SELECT * FROM customers WHERE address LIKE 'S%'"
+    let adr = 'Mountain 21'
+    let sql = 'SELECT * FROM customers WHERE address = ' + mysql.escape(adr)
     con.query(sql, (err, result) => {
         if(err) throw err
         console.log(result)
