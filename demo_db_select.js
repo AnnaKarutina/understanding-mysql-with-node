@@ -10,7 +10,7 @@ const con = mysql.createConnection({
 con.connect((err) => {
     if(err) throw err
     console.log('MySQL Server connected')
-    let sql = "SELECT * FROM customers"
+    let sql = "SELECT name, address FROM customers"
     con.query(sql, (err, result) => {
         if(err) throw err
         console.log(result)
