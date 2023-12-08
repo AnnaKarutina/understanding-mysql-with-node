@@ -10,9 +10,9 @@ const con = mysql.createConnection({
 con.connect((err) => {
     if(err) throw err
     console.log('MySQL Server connected')
-    let sql = "DELETE FROM customers WHERE address = 'Mountain 21'"
+    let sql = "DROP TABLE customers"
     con.query(sql, (err, result) => {
         if(err) throw err
-        console.log("Number of records deleted: " + result.affectedRows)
+        console.log("Table deleted")
     })
 })
