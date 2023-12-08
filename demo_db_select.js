@@ -11,8 +11,8 @@ con.connect((err) => {
     if(err) throw err
     console.log('MySQL Server connected')
     let adr = 'Mountain 21'
-    let sql = 'SELECT * FROM customers WHERE address = ' + mysql.escape(adr)
-    con.query(sql, (err, result) => {
+    let sql = 'SELECT * FROM customers WHERE address = ?'
+    con.query(sql, [adr], (err, result) => {
         if(err) throw err
         console.log(result)
     })
